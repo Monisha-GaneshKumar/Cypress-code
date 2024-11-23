@@ -1,0 +1,13 @@
+{
+    "fname": "Monisha",
+    "lname": "Ganeshkumar",
+    "day"  : "9",
+    "month": "March",
+    "year" :"2001",
+    "email":"Moni@gmail.com",
+    "company": "desicrew",
+    "password":"Moni@123",
+    "confirmpassword": "Moni@123",
+    "result": "Your registration completed"
+
+}

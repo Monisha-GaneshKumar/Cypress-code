@@ -23,3 +23,15 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+/// <reference types="Cypress" />
+/// <reference types="cypress-xpath" />
+
+//customized login for customcommands code
+Cypress.Commands.add("login", (email, password) => { 
+    cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+    cy.get("[placeholder='Username']").type(email)
+    cy.get("[placeholder='Password']").type(password)
+    cy.get("[type='submit']").click();
+
+ })
