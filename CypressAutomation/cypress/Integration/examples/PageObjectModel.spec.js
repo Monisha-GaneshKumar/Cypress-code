@@ -1,5 +1,5 @@
 
-import LoginPage from "../Integration/PageObjects/Login"
+import LoginPage from "../PageObjects/Login"
 describe('Test Suite', function(){
     it('Valid login test', function() {   
         const login = new LoginPage()

@@ -21,7 +21,7 @@ class LoginPage //this is a page object class for Login
 
    submit(){
     const button=cy.get('[type=submit]')
-    button.clear()
+    button.click()
    }
 }
 export default LoginPage
