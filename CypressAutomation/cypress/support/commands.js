@@ -27,6 +27,7 @@
 import 'cypress-file-upload';
 require('cypress-downloadfile/lib/downloadFileCommand')
 import '@4tw/cypress-drag-drop'
+//import 'cypress-iframe'; 
 
 /// <reference types="Cypress" />
 /// <reference types="cypress-xpath" />
@@ -39,3 +40,10 @@ Cypress.Commands.add("login", (email, password) => {
     cy.get("[type='submit']").click();
 
  })
+
+ Cypress.Commands.add('getIframe', (iframeSelector) => {
+    return cy.get(iframeSelector)
+      .its('0.contentDocument.body')
+      .should('not.be.empty')
+      .then(cy.wrap);
+  });

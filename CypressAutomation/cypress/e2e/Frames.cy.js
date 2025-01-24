@@ -1,10 +1,19 @@
-//const cypress = required("cypress")
 
-describe('handling frames', () => {  // this ia a test suite
-    it('approach', function() {   // this is one of the testcase
-       cy.visit("https://ui.vision/demo/webtest/frames/");
-       const iframe = cy.get("frame[src='frame_2.html']").its('0.contentDocument.body').should('be.visible').then(cy.wrap)//have to capture both iframe and document
-       iframe.get("[name='mytext2']").type("welcome")
+/// <reference types="cypress" />
+import 'cypress-iframe'
+describe('Handling iFrames', () =>{
+
+    it('iFrames', () =>{
+
+        cy.visit("https://jqueryui.com/droppable/")
+        cy.frameLoaded('.demo-frame')
+        cy.iframe().find('#draggable').then(function(res){
+
+            const frmValue = res.text()
+            expect(frmValue).to.contain('Drag me to my target')
+            cy.log(frmValue)
+        })
+
     })
 
-  })
+})
