@@ -19,13 +19,3 @@ describe('fileupload', ()=>{
 
 })
 
-// describe('File Download Test', () => {
-//   it('should download a file', () => {
-//     cy.task('downloadFile', {
-//       url: 'https://example.com/sample.pdf',  // Replace with actual file URL
-//       filePath: 'cypress/downloads/sample.pdf' // Path where the file will be saved
-//     }).then((result) => {
-//       cy.log(result);  // Log the success message
-//     });
-//   });
-// });
