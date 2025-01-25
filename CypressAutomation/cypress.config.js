@@ -1,17 +1,14 @@
 const { defineConfig } = require("cypress");
-const fs = require('fs-extra');
-const axios = require('axios');
+// const fs = require('fs-extra');
+// const axios = require('axios');
 
 module.exports = defineConfig({
-  video: true,
-  screenshotOnRunFailure: true
+  reporter: 'cypress-mochawesome-reporter', //for html reports
   e2e: {
-    setupNodeEvents(on, config) {
-      // Capture screenshot after each test failure
-      on('after:screenshot', (details) => {
-        console.log('Screenshot taken:', details.path);
-      });
-      return config;
-    },
-  },
+    setupNodeEvents(on, config){
+      //video: true,
+      screenshotOnRunFailure: true
+      require('cypress-mochawesome-reporter/plugin')(on);
+    }, 
+   },
   });
